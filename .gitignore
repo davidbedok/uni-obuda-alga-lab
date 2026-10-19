@@ -1,0 +1,35 @@
+# .NET build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Tt]est[Rr]esults/
+artifacts/
+
+# Test coverage and diagnostics
+coverage/
+coverage*.xml
+*.coverage
+*.coveragexml
+*.trx
+*.log
+
+# Visual Studio / Rider temporary files
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Gradle / Java build output
+.gradle/
+build/
+out/
+*.class
+
+*/reference/**

@@ -1,0 +1,37 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C#: Build Hello World",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "${workspaceFolder}/hello-world/src/HelloWorld.csproj"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": "build"
+    },
+    {
+      "label": "C#: Run Hello World",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "${workspaceFolder}/hello-world/src/HelloWorld.csproj"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "C#: Test Hello World",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "test",
+        "${workspaceFolder}/hello-world/tests/HelloWorld.Tests.csproj"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C#: Run HelloWorld",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "C#: Build Hello World",
+      "program": "${workspaceFolder}/hello-world/src/bin/Debug/net10.0/HelloWorld.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/hello-world/src",
+      "console": "integratedTerminal",
+      "stopAtEntry": false,
+      "justMyCode": true
+    }
+  ]
+}
