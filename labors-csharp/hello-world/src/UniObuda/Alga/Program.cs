@@ -50,7 +50,7 @@ public class Program
 
     private static void EvolutionDemo()
     {
-        LinearEquationDemo.ExecuteDemo();
+        GenericAlgorithmDemo.ExecuteDemo();
     }
 
 }
