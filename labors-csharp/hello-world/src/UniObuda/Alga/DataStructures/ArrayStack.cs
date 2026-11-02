@@ -1,7 +1,7 @@
+namespace HelloWorld.UniObuda.Alga.DataStuctures;
+
 using System.Collections;
 using System.Collections.Generic;
-
-namespace HelloWorld.UniObuda.Alga.DataStuctures;
 
 public class ArrayStack<T> : IStack<T>
 {

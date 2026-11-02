@@ -1,3 +1,6 @@
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+
 namespace HelloWorld.UniObuda.Alga.Recursion;
 
 public class RecursionCalculator
@@ -21,13 +24,72 @@ public class RecursionCalculator
         return number % 10 + SumDigits(number / 10);
     }
 
-    public static int Fibonacci(int number)
+    public static long Fibonacci(int number)
     {
         if (number <= 1)
         {
             return number;
         }
         return Fibonacci(number - 1) + Fibonacci(number - 2);
+    }
+
+    private static Dictionary<int, long> fibonacciMemo = new Dictionary<int, long>();
+
+    public static long FibonacciMemoized(int number)
+    {
+        if (number <= 1)
+        {
+            return number;
+        }
+        if (fibonacciMemo.ContainsKey(number))
+        {
+            // return fibonacciMemo[number];
+            return fibonacciMemo.GetValueOrDefault(number);
+        }
+        long result = FibonacciMemoized(number - 1) + FibonacciMemoized(number - 2);
+        // fibonacciMemo[number] = result;
+        fibonacciMemo.Add(number, result);
+        return result;
+    }
+
+    private static ConcurrentDictionary<int, long> fibonacciMemoConcurrent = new ConcurrentDictionary<int, long>
+    {
+        [0] = 0,
+        [1] = 1
+    };
+
+    public static long FibonacciMemoizedConcurrent(int number)
+    {
+        if (fibonacciMemoConcurrent.TryGetValue(number, out long cachedResult))
+        {
+            return cachedResult;
+        }
+
+        long result = FibonacciMemoizedConcurrent(number - 1) + FibonacciMemoizedConcurrent(number - 2);
+        fibonacciMemoConcurrent[number] = result;
+        return result;
+    }
+
+    public static long FibonacciSelfMemorized(int number)
+    {
+        var memo = new Dictionary<int, long>();
+        return FibonacciSelfMemorized(number, memo);
+    }
+
+    private static long FibonacciSelfMemorized(int number, Dictionary<int, long> memo)
+    {
+        if (number <= 1)
+        {
+            return number;
+        }
+
+        if (memo.TryGetValue(number, out long cachedResult))
+        {
+            return cachedResult;
+        }
+        long result = FibonacciSelfMemorized(number - 1, memo) + FibonacciSelfMemorized(number - 2, memo);        
+        memo[number] = result;
+        return result;
     }
 
     public static int AddPositives(int a, int b)

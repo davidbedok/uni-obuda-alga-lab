@@ -5,6 +5,7 @@ using HelloWorld.UniObuda.Alga.Functional;
 using HelloWorld.UniObuda.Alga.Generic;
 using HelloWorld.UniObuda.Alga.Recursion;
 using HelloWorld.UniObuda.Alga.EvolutionaryAlgorithms;
+using HelloWorld.UniObuda.Alga.Backtrack;
 
 public class Program
 {
@@ -14,7 +15,8 @@ public class Program
         // FunctionalDemo();
         // DataStucturesDemo();
         // RecursionDemo();
-        EvolutionDemo();
+        // EvolutionDemo();
+        Backtrack();
     }
 
     private static void GenericDemo()
@@ -38,19 +40,24 @@ public class Program
 
     private static void RecursionDemo()
     {
-        DemoRecursion.CountDownDemo();
-        DemoRecursion.CalculationDemo();
-        DemoRecursion.SumDigitsDemo();
-        DemoRecursion.FactorialDemo();
+        // DemoRecursion.CountDownDemo();
+        // DemoRecursion.CalculationDemo();
+        // DemoRecursion.SumDigitsDemo();
+        // DemoRecursion.FactorialDemo();
         DemoRecursion.FibonacciDemo();
-        DemoRecursion.DrawerDemo();
+        // DemoRecursion.DrawerDemo();
         // DemoRecursion.TowerOfHanoiDemo();
-        DemoRecursion.SierpinskiTriangleDemo();
+        // DemoRecursion.SierpinskiTriangleDemo();
     }
 
     private static void EvolutionDemo()
     {
         GenericAlgorithmDemo.ExecuteDemo();
+    }
+
+    private static void Backtrack()
+    {
+        DemoBacktrack.BackTrackRun();
     }
 
 }

@@ -37,11 +37,47 @@ public class DemoRecursion
         // Fibonacci(6) = 3 + 5 = 8 = Fibonacci(5) + Fibonacci(4)
         // Fibonacci(7) = 5 + 8 = 13 = Fibonacci(6) + Fibonacci(5)
         // Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)
-        AppDecorator.Header("Recursion: Fibonacci call tree");
+        AppDecorator.Header("Recursion: Fibonacci");
         for (int number = 0; number <= 8; number++)
         {
             Console.WriteLine($"Fibonacci({number}) = {RecursionCalculator.Fibonacci(number)}");
         }
+
+        AppDecorator.Header("Recursion: Fibonacci (memorized)");
+        for (int number = 0; number <= 8; number++)
+        {
+            Console.WriteLine($"Fibonacci({number}) = {RecursionCalculator.FibonacciMemoized(number)}");
+        }
+
+        int num = 45;
+        
+        System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
+        
+        stopwatch.Start();
+        Console.WriteLine($"Fibonacci({num}) = {RecursionCalculator.Fibonacci(num)}");
+        stopwatch.Stop();
+        Console.WriteLine($"Time taken for Fibonacci({num}): {stopwatch.ElapsedMilliseconds} ms");
+
+        stopwatch.Reset();
+        stopwatch.Start();
+        
+        Console.WriteLine($"FibonacciMemoized({num}) = {RecursionCalculator.FibonacciMemoized(num)}");
+        stopwatch.Stop();
+        Console.WriteLine($"Time taken for FibonacciMemoized({num}): {stopwatch.ElapsedMilliseconds} ms");
+
+        stopwatch.Reset();
+        stopwatch.Start();
+        
+        Console.WriteLine($"FibonacciMemoizedConcurrent({num}) = {RecursionCalculator.FibonacciMemoizedConcurrent(num)}");
+        stopwatch.Stop();
+        Console.WriteLine($"Time taken for FibonacciMemoizedConcurrent({num}): {stopwatch.ElapsedMilliseconds} ms");
+
+        stopwatch.Reset();
+        stopwatch.Start();
+        
+        Console.WriteLine($"FibonacciSelfMemorized({num}) = {RecursionCalculator.FibonacciSelfMemorized(num)}");
+        stopwatch.Stop();
+        Console.WriteLine($"Time taken for FibonacciSelfMemorized({num}): {stopwatch.ElapsedMilliseconds} ms");
     }
 
     public static void CalculationDemo()

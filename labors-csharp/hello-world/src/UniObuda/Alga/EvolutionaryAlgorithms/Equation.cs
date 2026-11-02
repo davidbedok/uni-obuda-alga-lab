@@ -1,7 +1,6 @@
 namespace HelloWorld.UniObuda.Alga.EvolutionaryAlgorithms;
 
 using System;
-using System.Linq;
 using System.Text;
 
 // w1 * A^1 + w2 * B^2 + w3 * C^3 + ... = 0
@@ -22,7 +21,7 @@ public class Equation
         }
     }
 
-    private Equation(double[] weights)
+    public Equation(double[] weights)
     {
         this.weights = weights;
     }
